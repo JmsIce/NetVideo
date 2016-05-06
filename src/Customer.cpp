@@ -29,6 +29,31 @@ void Customer::addRental(const Rental& rental) {
     rentals.push_back(rental);
 }
 
+// new
+double Customer::amountFor(const Rental& r) const{
+   
+   switch(it->getVideo().getCode()) {
+
+            case Video::REGULAR:
+            thisAmount += 2;
+            if (r.getDaysRented() > 2)
+                thisAmount += (r.getDaysRented() - 2) * 1.5;
+            break;
+
+            case Video::NEW_RELEASE:
+            thisAmount += r.getDaysRented() * 3;
+            break;
+
+            case Video::CHILDRENS:
+            thisAmount += 1.5;
+            if (r.getDaysRented() > 3)
+                thisAmount += (r.getDaysRented() - 3) * 1.5;
+            break;
+        }
+
+   return 0;
+}
+
 // customer rental statement
 std::string Customer::statement() const {
 
