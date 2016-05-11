@@ -1,5 +1,5 @@
 /*
-  Customer_t.cpp
+  Customer_test.cpp
 
   Test program for class Customer
 */

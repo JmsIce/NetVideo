@@ -15,11 +15,11 @@ public:
     // constructor
     Rental(const Video& movie, int days_rented);
 
-    // days rented
-    int getDaysRented() const;
-
     // movie rented
     const Video& getVideo() const;
+
+    // days rented
+    int getDaysRented() const;
 
 private:
     Video movie;
